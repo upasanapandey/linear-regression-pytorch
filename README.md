@@ -235,7 +235,7 @@ print(f"Predicted house value: ${prediction.item() * 100_000:.0f}")
 
 ### Loss Curve
 
-<img src="plots/loss.png" width="600"/>
+<img src="plots/loss.png" width="500" height="300"/>
 
 The model converges within the first 10 epochs and stabilizes around MSE 0.40.
 The remaining error reflects the **irreducible non-linearity** in the data —
@@ -247,18 +247,18 @@ This is the natural ceiling for this architecture.
 ### EDA Highlights
 
 #### Geographic Distribution of House Values
-<img src="plots/eda/05_geographic_heatmap.png" width="500"/>
+<img src="plots/eda/05_geographic_heatmap.png" width="400" height="450"/>
 *Coastal and Bay Area districts (dark red) command significantly higher prices —
 location is a stronger signal than the model can fully capture with linear weights alone.*
 
 #### Feature Correlations
-![Correlation Heatmap](plots/eda/03_correlation_heatmap.png)
+<img src="plots/eda/03_correlation_heatmap.png" width="500" height="400"/>
 *MedInc has the strongest positive correlation with target (+0.69).
 Latitude shows a negative correlation — northern districts tend to be cheaper.*
 
 
 #### Feature vs Target
-![Feature vs Target](plots/eda/04_feature_vs_target.png)
+<img src="plots/eda/04_feature_vs_target.png" width="650" height="350"/>
 *Red trend lines show the linear relationship each feature has with house value.
 MedInc is the clearest linear signal; Population and AveOccup are noisy with outliers.*
 

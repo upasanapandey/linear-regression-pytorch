@@ -235,7 +235,7 @@ print(f"Predicted house value: ${prediction.item() * 100_000:.0f}")
 
 ### Loss Curve
 
-![Loss Curve](plots/loss.png)
+<img src="plots/loss.png" width="600"/>
 
 The model converges within the first 10 epochs and stabilizes around MSE 0.40.
 The remaining error reflects the **irreducible non-linearity** in the data —

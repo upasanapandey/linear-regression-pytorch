@@ -4,6 +4,7 @@ myenv/
 # Python cache
 __pycache__/
 *.pyc
+*cache
 
 # Jupyter
 .ipynb_checkpoints/

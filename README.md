@@ -247,7 +247,7 @@ This is the natural ceiling for this architecture.
 ### EDA Highlights
 
 #### Geographic Distribution of House Values
-![Geographic Heatmap](plots/eda/05_geographic_heatmap.png)
+<img src="plots/eda/05_geographic_heatmap.png" width="500"/>
 *Coastal and Bay Area districts (dark red) command significantly higher prices —
 location is a stronger signal than the model can fully capture with linear weights alone.*
 

@@ -233,6 +233,47 @@ print(f"Predicted house value: ${prediction.item() * 100_000:.0f}")
 | Code style | ruff — all checks passed  |
 | Tests | 3/3 passing  |
 
+---
+
+## Experiment Tracking — MLflow
+
+All training runs are tracked with [MLflow](https://mlflow.org/).
+
+### Start the MLflow UI
+
+```bash
+mlflow ui
+```
+
+Go to `http://localhost:5000` in your browser.
+
+### Logged per run
+
+| Category | What's tracked |
+|----------|---------------|
+| **Parameters** | learning rate, epochs, batch size, optimizer, loss function, dataset |
+| **Metrics (per epoch)** | train loss, loss improvement, batch loss std, min, max |
+| **Final metrics** | final loss, best loss, worst loss, total improvement, % improvement |
+| **Artifacts** | model weights (`.pth`), loss curve (`plots/loss.png`) |
+| **Model** | PyTorch model logged via `mlflow.pytorch` |
+
+### Example runs
+
+| Run name | LR | Epochs | Batch | Final Loss |
+|----------|----|--------|-------|------------|
+| `lr=0.001_epochs=100_bs=64` | 0.001 | 100 | 64 | ~0.394 |
+| `lr=0.005_epochs=100_bs=64` | 0.005 | 100 | 64 | ~0.39x |
+| `lr=0.001_epochs=150_bs=128` | 0.001 | 150 | 128 | ~0.39x |
+
+### Comparing runs
+
+Select multiple runs in the MLflow UI and click **Compare** to see:
+- Loss curves side by side
+- Parameter differences
+- Best performing configuration
+
+---
+
 ### Loss Curve
 
 <img src="plots/loss.png" width="500" height="300"/>

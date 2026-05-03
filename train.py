@@ -38,7 +38,14 @@ if __name__ == "__main__":
 
     # Train the model
     trainer_instance = trainer.Trainer(model_instance, optimizer, criterion, args.epochs)
-    trainer_instance.fit(dataloader)
+    trainer_instance.fit(dataloader, params={
+    "epochs": args.epochs,
+    "learning_rate": args.learning_rate,
+    "batch_size": args.batch_size,
+    "optimizer": "SGD",
+    "loss": "MSELoss",
+    "dataset": "California Housing",
+})
 
     os.makedirs("models", exist_ok=True)
     trainer_instance.save("models/linear_model.pth")
